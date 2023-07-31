@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+
+<!-- (c) Copyright 2012 SailPoint Technologies, Inc., All Rights Reserved. -->
+
+<!--
+  Batch specific Workflows and Forms for Life Cycle Manager
+ -->
+
+<sailpoint>
+
+
+
+<Workflow created="1690805566844" explicitTransitions="true" id="" modified="1690806731826" name="cybersolve">
+  <Variable input="true" name="currentUserName"/>
+  <Variable initializer="true" name="trace"/>
+  <Step icon="Start" name="Start" posX="20" posY="20">
+    <Transition to="Generic Step"/>
+  </Step>
+  <Step icon="Default" name="Generic Step" posX="501" posY="32">
+    <Approval name="Sailpoint students" owner="ref:currentUserName" return="" send="">
+      <Form name="Sailpoint students">
+        <Attributes>
+          <Map>
+            <entry key="pageTitle" value="Sailpoint students"/>
+          </Map>
+        </Attributes>
+        <Section columns="4" name="Section 1">
+          <Field columnSpan="1" displayName="FirstName" name="firstName" type="string"/>
+          <Field columnSpan="1" displayName="LastName" name="lastName" type="string"/>
+          <Field columnSpan="1" displayName="Gender" name="gender" type="string">
+            <AllowedValuesDefinition>
+              <Value>
+                <List>
+                  <String>male</String>
+                  <String>female</String>
+                </List>
+              </Value>
+            </AllowedValuesDefinition>
+          </Field>
+          <Field columnSpan="1" displayName="City Name" name="city" type="string"/>
+        </Section>
+        <Button action="next" label="Save Identity"/>
+        <Button action="cancel" label="Cancel"/>
+      </Form>
+    </Approval>
+    <Transition to="Stop"/>
+  </Step>
+  <Step icon="Stop" name="Stop" posX="829" posY="18"/>
+</Workflow>
+<QuickLink action="workflow" category="Access" created="1681655217659" id="" messageKey="Cybersolve Joiningform" name="Cyber" ordering="14">
+  <Attributes>
+    <Map>
+      <entry key="workflowName" value="cybersolve"/>
+    </Map>
+  </Attributes>
+  <QuickLinkOptions allowSelf="true" created="1645260457194" id="" modified="1681655217659">
+    <DynamicScopeRef>
+      <Reference class="sailpoint.object.DynamicScope" id="" name="Everyone"/>
+    </DynamicScopeRef>
+  </QuickLinkOptions>
+</QuickLink>
+</sailpoint>
