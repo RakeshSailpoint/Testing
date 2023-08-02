@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<sailpoint>
+ <Workflow created="1690968107034" explicitTransitions="true" id="" modified="1690968150616" name="Saiuserrequest">
+  <Variable initializer="true" name="trace"/>
+  <Step icon="Start" name="Start" posX="19" posY="20">
+    <Transition to="DisplayForm"/>
+  </Step>
+  <Step icon="Default" name="DisplayForm" posX="291" posY="18">
+    <Approval name="Sai user accessForm" owner="spadmin" return="" send="">
+      <Form name="Sai user accessForm">
+        <Attributes>
+          <Map>
+            <entry key="pageTitle" value="Sai user accessForm"/>
+          </Map>
+        </Attributes>
+        <Section columns="4" name="Section 1">
+          <Field columnSpan="1" displayName="First Name" helpKey="specify firstname" name="firstName" type="string"/>
+          <Field columnSpan="1" displayName="LastName" helpKey="Specify Last Name" name="lastName" type="string"/>
+          <Field columnSpan="1" displayName="Manager" name="manager" type="sailpoint.object.Identity"/>
+          <Field columnSpan="1" displayName="Gender" name="gender" type="string"/>
+        </Section>
+        <Button action="next" label="Next"/>
+        <Button action="cancel" label="Cancel"/>
+        <Button action="refresh" label="Refresh"/>
+      </Form>
+    </Approval>
+    <Transition to="Stop"/>
+  </Step>
+  <Step icon="Stop" name="Stop" posX="521" posY="22"/>
+</Workflow>
+
+<QuickLink action="workflow" category="Access" created="1690467233004" id="" messageKey="Sai user request" modified="1690468108917" name="Saiuserrequest" ordering="15">
+  <Attributes>
+    <Map>
+      <entry key="workflowName" value="Saiuserrequest"/>
+    </Map>
+  </Attributes>
+  <QuickLinkOptions allowSelf="true" created="1690467233004" id="" modified="1690468108917">
+    <DynamicScopeRef>
+      <Reference class="sailpoint.object.DynamicScope" id="" name="Everyone"/>
+    </DynamicScopeRef>
+  </QuickLinkOptions>
+</QuickLink>
+
+
+
+
+</sailpoint>
