@@ -1,0 +1,19 @@
+CREATE TABLE  identityiq.emps(
+  EmpId  varchar(45) ,
+  name varchar(45) NOT NULL,
+  FirstName varchar(45) NOT NULL,
+  LastName varchar(45) NOT NULL,
+  Entitlments  varchar(45) NOT NULL,
+  status  varchar(45) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+ insert into identityiq.emps(EmpId,Name,FirstName,LastName,Entitlments,status) values('1a2a','Mary.Johnson', 'Mary', 'Johnson', 'SecurityAdmin','Active');
+insert into identityiq.emps(EmpId,Name,FirstName,LastName,Entitlments,status) values('1a2b','John.Williams', 'John', 'Williams', 'SecurityAdmin','Active');
+insert into identityiq.emps(EmpId,Name,FirstName,LastName,Entitlments,status) values('1a2c','Patricia.Jones', 'Patricia', 'Jones', 'Admin','Active');
+
+insert into identityiq.emps(EmpId,Name,FirstName,LastName,Entitlments,status) values('5a5a5a','Sailpoint.rakesh', 'Rakesh', 'Sailpoint', 'SecurityAdmin','Active');
+
+insert into identityiq.emps(EmpId,Name,FirstName,LastName,Entitlments,status) values('1a2b3d','Jennifer.Thomas', 'Jennifer', 'Thomas', 'SecurityAdmin','Active');
+insert into identityiq.emps(EmpId,Name,FirstName,LastName,Entitlments,status) values('1a2c3a','Richard.Jackson', 'Richard', 'Jackson', 'SecurityAdmin','Active');
+
+commit;
